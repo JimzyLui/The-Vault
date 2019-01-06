@@ -33,8 +33,13 @@ module.exports = function() {
     // }
   }
 
+  // return {
+  //   setValue,
+  //   getValue
+  // };
+
   return {
-    setValue,
-    getValue
+    getValue: key => (vault.hasOwnProperty(key) ? vault[key] : null),
+    setValue: (key, value) => (vault[key] = value)
   };
 };
